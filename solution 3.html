@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSON Placeholder API</title>
+<script>
+function fetchData() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://jsonplaceholder.typicode.com/todos");
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      var data = JSON.parse(xhr.responseText);
+      var list = document.getElementById("list");
+      for (var i = 0; i < data.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = data[i].title;
+        list.appendChild(li);
+      }
+    } else {
+      console.log("Error fetching data");
+    }
+  };
+  xhr.send();
+}
+
+function showSkeletonLoader() {
+  var list = document.getElementById("list");
+  for (var i = 0; i < 10; i++) {
+    var li = document.createElement("li");
+    li.innerHTML = "Loading...";
+    list.appendChild(li);
+  }
+}
+</script>
+</head>
+<body>
+<h1>JSON Placeholder API</h1>
+<ul id="list"></ul>
+<button onclick="fetchData()">Fetch Data</button>
+<script>
+showSkeletonLoader();
+</script>
+</body>
+</html>

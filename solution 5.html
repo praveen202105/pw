@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+<script>
+function validateForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var password = document.getElementById("password").value;
+  var age = document.getElementById("age").value;
+  var gender = document.getElementById("gender").value;
+  var date = document.getElementById("date").value;
+  var color = document.getElementById("color").value;
+
+  // Name validation
+  if (name === "") {
+    alert("Please enter your name.");
+    return false;
+  }
+
+  // Email validation
+  if (!/^\w+@\w+\.[a-z]{2,3}$/.test(email)) {
+    alert("Please enter a valid email address.");
+    return false;
+  }
+
+  // Phone validation
+  if (!/^\d{10}$/.test(phone)) {
+    alert("Please enter a valid phone number.");
+    return false;
+  }
+
+  // Password validation
+  if (password.length < 6) {
+    alert("Please enter a password that is at least 6 characters long.");
+    return false;
+  }
+
+  // Age validation
+  if (age < 18) {
+    alert("You must be at least 18 years old to use this form.");
+    return false;
+  }
+
+  // Gender validation
+  if (gender === "") {
+    alert("Please select your gender.");
+    return false;
+  }
+
+  // Date validation
+  if (date === "") {
+    alert("Please select a date.");
+    return false;
+  }
+
+  // Color validation
+  if (color === "") {
+    alert("Please select a color.");
+    return false;
+  }
+
+  return true;
+}
+</script>
+</head>
+<body>
+<form onsubmit="return validateForm()">
+  <input type="text" id="name" placeholder="Name" />
+  <input type="email" id="email" placeholder="Email" />
+  <input type="tel" id="phone" placeholder="Phone" />
+  <input type="password" id="password" placeholder="Password" />
+  <input type="number" id="age" placeholder="Age" />
+  <select id="gender">
+    <option value="">Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+  <input type="date" id="date" />
+  <input type="color" id="color" />
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

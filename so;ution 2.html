@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Input Box App</title>
+<script>
+function addInput() {
+  var input = document.getElementById("input").value;
+  var list = document.getElementById("list");
+  var li = document.createElement("li");
+  li.innerHTML = input;
+  list.appendChild(li);
+}
+</script>
+</head>
+<body>
+<input type="text" id="input" placeholder="Enter text..." />
+<button onclick="addInput()">Submit</button>
+<ul id="list"></ul>
+</body>
+</html>
