@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      color: white;
+    }
+    .section1 {
+      padding: 40px 0px;
+      width: 100%;
+      background-color: black;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .exucationContainer {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .div {
+      width: 300px;
+    }
+    .memory {
+      background: rgb(27, 27, 50);
+    }
+    .code {
+      background: rgb(36, 36, 73);
+    }
+    .result {
+      background: rgb(43, 43, 62);
+    }
+    .title {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      padding: 10px 12px;
+      border: 2px solid #fff;
+    }
+    .context {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    p {
+      padding: 12px;
+    }
+    .text {
+      padding: 14px 60px;
+    }
+    .first {
+      color: rgb(232, 168, 78);
+    }
+    .text::first-letter {
+      font-size: 30px;
+      color: aqua;
+    }
+  </style>
+  <body>
+    <section class="section1">
+      <p class="text">
+        <span class="first"> Execution context</span> is the concept for
+        describing the internal working of a code. In JavaScript, the
+        environment that enables the JavaScript code to get executed is what we
+        call JavaScript Execution Context. It is the execution context that
+        decides which code section has access to the functions, variables, and
+        objects used in the code. During the execution context, the specific
+        code gets parsed line by line then the variables and functions are
+        stored in the memory. An execution context is similar to a container
+        that stores variables, and the code gets evaluated and then executed.
+        Thus, it is the execution context that provides an environment for the
+        specific code to get executed.
+      </p>
+      <h1 class="context">Exucation context</h1>
+      <div class="exucationContainer">
+        <div class="memory div">
+          <div class="title">memory</div>
+          <div>
+            <p>a: <span>3</span></p>
+            <p>b: <span>2</span></p>
+            <p>sum: <span>undifined</span></p>
+          </div>
+        </div>
+        <div class="code div">
+          <div class="title">Code</div>
+          <div>
+            <p>a: <span>3</span></p>
+            <p>b: <span>2</span></p>
+            <p>sum: <span>undifined</span></p>
+          </div>
+        </div>
+        <div class="result div">
+          <div class="title">action</div>
+          <div>
+            <p>a= <span>3</span></p>
+            <p>b= <span>2</span></p>
+            <p>const sum; <span></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="exucationContainer">
+        <div class="memory div">
+          <div class="title">memory</div>
+          <div>
+            <p>a: <span>3</span></p>
+            <p>b: <span>2</span></p>
+            <p>sum: <span>5</span></p>
+          </div>
+        </div>
+        <div class="code div">
+          <div class="title">Code</div>
+          <div>
+            <p>a: <span>3</span></p>
+            <p>b: <span>2</span></p>
+            <p>sum: <span>5</span></p>
+          </div>
+        </div>
+        <div class="result div">
+          <div class="title">action</div>
+          <div>
+            <p>a= <span>3</span></p>
+            <p>b= <span>2</span></p>
+            <p>const sum=5; <span></span></p>
+            <p>console.log(sum)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
